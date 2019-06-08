@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition>
+		<div class="main">
+				<nav class="cbp-hsmenu-wrapper" id="cbp-hsmenu-wrapper">
+					<div class="cbp-hsinner">
+					<h:form id="formMenu">
+						<ul class="cbp-hsmenu">
+							<h:panelGroup rendered="#{!usuarioBean.estaIdentificado}">
+								<li>
+									<p:commandLink action="/formularios/registrarusuario?faces-redirect=true">
+										<h:outputText value="#{msg['menu.registrarusuario']}"/>	
+										<f:setPropertyActionListener target="#{logicaBean.operacion}" value="registrarusuario" />
+									</p:commandLink>
+								</li>
+							</h:panelGroup>
+							<li>
+								<a href="#">#{msg['menu.perfil']}</a>
+								<ul class="cbp-hssubmenu">
+									<h:panelGroup rendered="#{!usuarioBean.estaIdentificado}">
+										<li>
+											<p:commandLink action="/formularios/changepassword?faces-redirect=true" >
+												<p:graphicImage value="/resources/images/changepassword.png" title="#{msg['menu.perfil.cambiarpasword']}" alt="#{msg['menu.perfil.cambiarpasword']}"/>
+												<span class="textoMenu">#{msg['menu.perfil.cambiarpasword']}</span>
+												<f:setPropertyActionListener target="#{logicaBean.operacion}" value="changepassword" />
+											</p:commandLink>
+										</li>
+									</h:panelGroup>
+									<h:panelGroup rendered="#{usuarioBean.estaIdentificado}">
+									<li>
+										<p:commandLink action="/formularios/generarcodigo?faces-redirect=true">
+											<p:graphicImage value="/resources/images/generarcodigo.png" title="#{msg['menu.perfil.generacodigo']}" alt="#{msg['menu.perfil.generacodigo']}"/>
+											<span class="textoMenu">#{msg['menu.perfil.generacodigo']}</span>
+											<f:setPropertyActionListener target="#{logicaBean.operacion}" value="generarcodigo" />
+										</p:commandLink>
+									</li>
+									</h:panelGroup>
+									<h:panelGroup rendered="#{usuarioBean.estaIdentificado}">
+									<li>
+										<p:commandLink action="/formularios/cambiardatos?faces-redirect=true">
+											<p:graphicImage value="/resources/images/cambiardatos.png" title="#{msg['menu.perfil.cambiardatos']}" alt="#{msg['menu.perfil.cambiardatos']}"/>
+											<span class="textoMenu">#{msg['menu.perfil.cambiardatos']}</span>
+											<f:setPropertyActionListener target="#{logicaBean.operacion}" value="cambiardatos" />
+										</p:commandLink>
+									</li>
+									</h:panelGroup>
+								</ul>
+							</li>
+							<li>
+								<a href="#">#{msg['menu.documentos']}</a>
+								<ul class="cbp-hssubmenu cbp-hssub-rows">
+								<h:panelGroup rendered="#{usuarioBean.estaIdentificado}">
+									<li>
+										<p:commandLink action="/formularios/firmardocumento?faces-redirect=true">
+											<p:graphicImage value="/resources/images/firmardocumento.png" title="#{msg['menu.documentos.firmar']}" alt="#{msg['menu.documentos.firmar']}"/>
+											<span>#{msg['menu.documentos.firmar']}</span>
+											<f:setPropertyActionListener target="#{logicaBean.operacion}" value="firmardocumento" />
+										</p:commandLink>
+									</li>
+									</h:panelGroup>
+									
+									<li>
+										<p:commandLink action="/formularios/validarfirma?faces-redirect=true">
+											<p:graphicImage value="/resources/images/validarfirma.png" title="#{msg['menu.documentos.validar']}" alt="#{msg['menu.documentos.validar']}"/>
+											<span>#{msg['menu.documentos.validar']}</span>
+											<f:setPropertyActionListener target="#{logicaBean.operacion}" value="validarfirma" />
+										</p:commandLink>
+									</li>
+									
+									<h:panelGroup rendered="#{usuarioBean.estaIdentificado}">
+									<li>
+										<p:commandLink action="/formularios/verdocumentos?faces-redirect=true">
+											<p:graphicImage value="/resources/images/verdocumentos.png" title="#{msg['menu.documentos.ver']}" alt="#{msg['menu.documentos.ver']}"/>
+											<span>#{msg['menu.documentos.ver']}</span>
+											<f:setPropertyActionListener target="#{logicaBean.operacion}" value="verdocumentos" />
+										</p:commandLink>
+									</li>
+									</h:panelGroup>
+								</ul>
+							</li>
+						</ul>
+						</h:form>
+					</div>
+				</nav>
+			</div>
+	</ui:composition>
+</html>
