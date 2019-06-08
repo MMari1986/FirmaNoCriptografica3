@@ -6,6 +6,7 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
+@SuppressWarnings("rawtypes")
 @FacesConverter("FechaConverter")
 public class FechaConverter implements Converter {
 

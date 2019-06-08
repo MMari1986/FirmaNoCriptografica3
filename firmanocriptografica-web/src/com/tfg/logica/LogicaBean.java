@@ -26,7 +26,7 @@ public class LogicaBean implements Serializable {
 	
 	private Locale locale;
 
-	//Contiene la accion que está realizando el usuario
+	//Contiene la accion que esta realizando el usuario
 	private String operacion;
 
 	public LogicaBean() {
@@ -72,7 +72,7 @@ public class LogicaBean implements Serializable {
 			msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bienvenid@", usuario.getNombreUsuario());
 		} else {
 			usuario.setEstaIdentificado(false);
-			msg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Error", "Credenciales no válidas");
+			msg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Error", "Credenciales no vï¿½lidas");
 		}
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 		context.addCallbackParam("estaLogeado", usuario.isEstaIdentificado());
@@ -101,7 +101,7 @@ public class LogicaBean implements Serializable {
 			msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bienvenid@", usuario);
 		} else {
 			logeado = false;
-			msg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Error", "Credenciales no válidas");
+			msg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Error", "Credenciales no vï¿½lidas");
 		}
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 		context.addCallbackParam("estaLogeado", logeado);

@@ -11,17 +11,17 @@ public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = -1833334162166053955L;
 	
-	// 1.- información de la sesión
+	// 1.- informacion de la sesion
 	private String nombreUsuario;
 	private String password;
 	private boolean estaIdentificado = false;
 	
-	//2.- Infromación para Google Authenticator
+	//2.- Infromacion para Google Authenticator
 	private String claveSecreta;
 	private String contenidoQR = null;
 	private String codigoVerificacion;
 
-	//3.- Datos básicos de usuario
+	//3.- Datos basicos de usuario
 	private String numeroDocumento;
 	private String nombre;
 	private String apellido1;
@@ -33,7 +33,7 @@ public class Usuario implements Serializable {
 	private boolean correoElectronicoValidado;
 	
 	//NOTA: Se incluyen estos dos campos por si en el futuro se quieren implementar este tipo de validaciones
-	//TODO. Campo para solicitar al usuario si se desea realizar alguna validación con el dervisio SCSP
+	//TODO. Campo para solicitar al usuario si se desea realizar alguna validaciï¿½n con el dervisio SCSP
 	private String campoExtraValidacion;
 		
 	//TODO. Campo incluido para indicar que el usuario ha sido validado presencialmente

@@ -35,7 +35,7 @@ public class Authenticator {
 	    
 	    claveSecreta = "LESUBIDXHRPTEERN";
 	    boolean isCodeValid = gAuth.authorize(claveSecreta, Integer.parseInt("275363"));
-	    System.out.println("Resultado verificación: " + isCodeValid);
+	    System.out.println("Resultado verificacion: " + isCodeValid);
 	    
 	}
 	
